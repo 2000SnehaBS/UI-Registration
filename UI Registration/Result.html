@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <title>View details</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: lightskyblue ;
+            min-height: 150vh;
+        }
+        h1{
+            font-family: Verdana;
+            font-size: 250%;
+            display: inline-block;
+            width: 30%;
+            color: rgb(2, 2, 32);
+        }
+        h3{
+            font-family: sans-serif;
+            font-size: 125%;
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            color: rgb(2, 2, 14);
+            
+        }
+        span{
+            font-size: 100%;
+            color:white;
+        }
+    </style>
+
+</head>
+<body>
+    <h1><u> Your Details</u></h1>
+    <h3>
+        First Name : <span id="rFname"/>
+    </h3>
+    <h3>
+        Last Name : <span id="rLname"/>
+    </h3>
+    <h3>
+        Age :<span id="rAge"/>
+    </h3>
+    <h3>
+        Address : <span id="rAddress"/>
+    </h3>
+    <h3>
+        Mobile Number :<span id="rMobileNumber"/>
+    </h3>
+    <h3>
+        E-mail ID :<span id="rEmail"/>
+    </h3>
+    <h3>
+        Date Of Birth :<span id="rDOB"/>
+    </h3>
+    <script>
+        document.getElementById("rFname").innerHTML = localStorage.getItem("FNAME");
+        document.getElementById("rLname").innerHTML = localStorage.getItem("LNAME");
+        document.getElementById("rAge").innerHTML = localStorage.getItem("AGE");
+        document.getElementById("rAddress").innerHTML = localStorage.getItem("ADDRESS");
+        document.getElementById("rMobileNumber").innerHTML = localStorage.getItem("MOBILENUMBER");
+        document.getElementById("rEmail").innerHTML = localStorage.getItem("EMAIL");
+        document.getElementById("rDOB").innerHTML = localStorage.getItem("DOB");
+       
+      
+    </script>
+</body>
+</html>

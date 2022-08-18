@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function result()
+        {
+           var fname= document.getElementById("fname").value;
+           var lname= document.getElementById("lname").value;
+           var age= document.getElementById("age").value;
+           var address= document.getElementById("address").value;
+           var mobileNumber= document.getElementById("mobileNumber").value;
+           var email= document.getElementById("email").value;
+           var dob= document.getElementById("dob").value;
+
+           localStorage.setItem("FNAME",fname);
+           localStorage.setItem("LNAME",lname);
+           localStorage.setItem("AGE", age);
+           localStorage.setItem("ADDRESS",address);
+           localStorage.setItem("MOBILENUMBER",mobileNumber);
+           localStorage.setItem("EMAIL",email);
+           localStorage.setItem("DOB",dob);
+            return false;
+        }
+    </script>
+</head>
+<body class="middle">
+    <div class="Main">
+        <div class="register">
+            <h2> Register Here</h2>
+            <form action="Result.html" id = "register" method="POST">
+            <label>First Name : </label>
+            <br>
+            <input type ="text" name ="fname" id ="fname" placeholder ="Enter Your First Name">
+            <br><br>
+            <label>Last Name : </label>
+            <br>
+            <input type ="text" name ="lname" id ="lname" placeholder ="Enter Your Last Name">
+            <br><br>
+            <label> Age :</label>
+            <br>
+            <input type ="number" name = "age" id="age" placeholder="How old are you? ">
+            <br><br>
+            <label>Address : </label>
+            <br>
+            <input type ="text" name = "address" id="address" placeholder="Enter Your Home Address ">
+            <br><br>
+            <label>Mobile Number : </label>
+            <br>
+            <input type ="number" name = "mobilenumber" id="mobileNumber" placeholder="Enter Your Mobile Number ">
+            <br><br>
+            <label>E-Mail ID : </label>
+            <br>
+            <input type ="email" name = "email" id="email" placeholder="Enter Your Valid E-Mail ">
+            <br><br>
+            <label>Date Of Birth : </label>
+            <br>
+            <input type ="date" name = "dob" id="dob" placeholder="Enter Your Date Of Birth ">
+            <br><br>
+            <input type ="Submit" value = "Submit" name = "submit" id="submit" onclick="result();" />
+            </form>
+        </div><!--end register-->
+    </div><!--end main-->
+     
+    <script>
+        function validation()
+        {
+            var first_name = document.forms["register"]["fname"].value;
+            var last_name = document.forms["register"]["lname"].value;
+            var mobile = document.forms["register"]["mobile"].value;
+            var age = document.forms["register"]["age"].value;
+            var num = document.forms["register"]["mobile"].value;
+            var letter = /^[a-zA-Z]*$/;
+            
+            if(!isNaN(first_name))
+            {
+                alert("first name should be only alphabets");
+                return false;
+            }
+           if(!first_name.match(letter))
+            {
+                alert("First name must contain only letters");
+                return false;
+
+            }
+            
+            if(!isNaN(last_name))
+            {
+                alert("last name should be only alphabets");
+                return false;
+            }
+
+            if(!last_name.match(letter))
+            {
+                alert("Last name must contain only letters");
+                return false;
+                
+            }
+            if(isNaN(mobile))
+            {
+                alert("please enter the numbers ");
+                return false;
+            }
+            if(age>100 || age<1 || isNaN(age))
+            {
+                alert("The age must be a number 1 and 100");
+                return false;
+            }
+            if(num.length!=10)
+            {
+                alert("Phone number must be 10 digits");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
